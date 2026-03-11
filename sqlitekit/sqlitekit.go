@@ -1,6 +1,7 @@
 package sqlitekit
 
 import (
+	"fmt"
 	"io/fs"
 	"os"
 
@@ -12,10 +13,16 @@ import (
 func Initialize(dbPath, schemaDir string) error {
 	cfg := models.GetConfig()
 	models.LockConfig()
+	// ensure schema directory exists
+	if _, err := os.Stat(schemaDir); err != nil {
+		if os.IsNotExist(err) {
+			return fmt.Errorf("sqlitekit: schema directory does not exist: %s", schemaDir)
+		}
+		return err
+	}
 	if err := db.Open(dbPath, cfg); err != nil {
 		return err
 	}
-
 	return schema.Apply(os.DirFS(schemaDir))
 }
 
@@ -26,9 +33,5 @@ func InitializeEmbedded(dbPath string, migrations fs.FS) error {
 		return err
 	}
 
-	if err := schema.Apply(migrations); err != nil {
-		return err
-	}
-
-	return nil
+	return schema.Apply(migrations)
 }

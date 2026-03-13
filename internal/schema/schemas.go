@@ -6,7 +6,7 @@ import (
 	"io/fs"
 	"strings"
 
-	"github.com/Des1red/sqlitekit/internal/db"
+	"github.com/Des1red/gosqlitekit/internal/db"
 )
 
 func execSQLFile(files fs.FS, filename string) error {

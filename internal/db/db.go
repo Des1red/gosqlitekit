@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"os"
 
-	"github.com/Des1red/sqlitekit/internal/logs"
-	"github.com/Des1red/sqlitekit/internal/models"
+	"github.com/Des1red/gosqlitekit/internal/logs"
+	"github.com/Des1red/gosqlitekit/internal/models"
 
 	_ "github.com/mattn/go-sqlite3"
 )

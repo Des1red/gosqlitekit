@@ -20,7 +20,7 @@ A small, simple SQLite initialization and migration helper for Go.
 
 ### Installation
 ```go
-go get github.com/Des1red/sqlitekit
+go get github.com/Des1red/gosqlitekit
 ```
 ### Usage
 #### Filesystem migrations
@@ -28,7 +28,7 @@ Initialize the database and run migrations from a directory.
 ```go
 package main
 
-import "github.com/Des1red/sqlitekit/sqlitekit"
+import "github.com/Des1red/gosqlitekit/sqlitekit"
 
 var DB *sql.DB
 
@@ -51,7 +51,7 @@ package main
 
 import (
 	"embed"
-	"github.com/Des1red/sqlitekit/sqlitekit"
+	"github.com/Des1red/gosqlitekit/sqlitekit"
 )
 
 //go:embed schema/*.sql
@@ -89,7 +89,7 @@ You can override the configuration before initialization:
 ```go
 package main
 
-import "github.com/Des1red/sqlitekit/sqlitekit"
+import "github.com/Des1red/gosqlitekit/sqlitekit"
 var DB *sql.DB
 func main() {
 

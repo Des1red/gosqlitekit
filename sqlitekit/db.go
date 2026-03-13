@@ -3,7 +3,7 @@ package sqlitekit
 import (
 	"database/sql"
 
-	"github.com/Des1red/sqlitekit/internal/db"
+	"github.com/Des1red/gosqlitekit/internal/db"
 )
 
 func DB() *sql.DB {

@@ -5,9 +5,9 @@ import (
 	"io/fs"
 	"os"
 
-	"github.com/Des1red/sqlitekit/internal/db"
-	"github.com/Des1red/sqlitekit/internal/models"
-	"github.com/Des1red/sqlitekit/internal/schema"
+	"github.com/Des1red/gosqlitekit/internal/db"
+	"github.com/Des1red/gosqlitekit/internal/models"
+	"github.com/Des1red/gosqlitekit/internal/schema"
 )
 
 func Initialize(dbPath, schemaDir string) error {

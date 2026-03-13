@@ -1,6 +1,6 @@
 package sqlitekit
 
-import "github.com/Des1red/sqlitekit/internal/models"
+import "github.com/Des1red/gosqlitekit/internal/models"
 
 type Config = models.Config
 

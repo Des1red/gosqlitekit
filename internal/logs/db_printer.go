@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Des1red/sqlitekit/internal/models"
+	"github.com/Des1red/gosqlitekit/internal/models"
 )
 
 func PrintDBInit(path string, cfg models.Config) {

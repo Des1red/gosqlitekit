@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/Des1red/sqlitekit/internal/db"
-	"github.com/Des1red/sqlitekit/internal/logs"
+	"github.com/Des1red/gosqlitekit/internal/db"
+	"github.com/Des1red/gosqlitekit/internal/logs"
 )
 
 func Apply(files fs.FS) error {

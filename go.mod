@@ -1,4 +1,4 @@
-module github.com/Des1red/sqlitekit
+module github.com/Des1red/gosqlitekit
 
 go 1.23.5
 

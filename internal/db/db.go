@@ -14,36 +14,36 @@ var DB *sql.DB
 
 func Open(path string, cfg models.Config) error {
 
-	logs.PrintDBInit(path, cfg)
+	w := logs.PrintDBInit(path, cfg)
 	var err error
 
 	DB, err = sql.Open("sqlite3", path)
 	if err != nil {
-		logs.PrintDBFail(err)
+		logs.PrintDBFail(err, w)
 		return err
 	}
 
 	if err = DB.Ping(); err != nil {
-		logs.PrintDBFail(err)
+		logs.PrintDBFail(err, w)
 		return err
 	}
 
 	if cfg.WAL {
 		if _, err := DB.Exec("PRAGMA journal_mode=WAL;"); err != nil {
-			logs.PrintDBFail(err)
+			logs.PrintDBFail(err, w)
 			return err
 		}
 	}
 
 	if cfg.ForeignKeys {
 		if _, err := DB.Exec("PRAGMA foreign_keys = ON;"); err != nil {
-			logs.PrintDBFail(err)
+			logs.PrintDBFail(err, w)
 			return err
 		}
 	}
 
 	if _, err := DB.Exec("PRAGMA busy_timeout = 5000;"); err != nil {
-		logs.PrintDBFail(err)
+		logs.PrintDBFail(err, w)
 		return err
 	}
 
@@ -54,7 +54,7 @@ func Open(path string, cfg models.Config) error {
 		_ = os.Chmod(path, 0600)
 	}
 
-	logs.PrintDBReady()
+	logs.PrintDBReady(w)
 
 	return nil
 }

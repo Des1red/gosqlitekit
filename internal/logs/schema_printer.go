@@ -45,7 +45,7 @@ func PrintMigration(status, name string, width int) {
 		color = Reset
 	}
 
-	fmt.Printf("│ %s%-2s %-6s%s │ %-*s │\n", color, icon, status, Reset, width, name)
+	fmt.Printf("│ %s%-2s %-6s%s│ %-*s │\n", color, icon, status, Reset, width, name)
 
 	if status == "FAIL" {
 		PrintFooter(width)

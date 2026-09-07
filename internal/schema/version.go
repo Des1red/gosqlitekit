@@ -9,7 +9,7 @@ import (
 
 const (
 	SQLiteKitVersion    = "dev"
-	SchemaFormatVersion = "v1.1.0"
+	SchemaFormatVersion = "v1.1.1"
 )
 
 func ensureMetaTable() error {
